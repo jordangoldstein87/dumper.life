@@ -43,10 +43,10 @@ window.DP = {
     code: "DUMPER96",
   },
   merch: [
-    { id: "rather-be-at-the-party", name: "Party Tee",       url: "https://square.link/u/VP4VbwZz" },
-    { id: "jgo-flushed-the-beat",   name: "Flushed The Beat Tee",          url: "https://square.link/u/ulMU2D9E" },
-    { id: "restarted-our-night",    name: "Restarted Tee",      url: "https://square.link/u/Fan3tcMR" },
-    { id: "came-in-late",           name: "Came In Late Tee",                 url: "https://square.link/u/eCHoM1pF" },
-    { id: "in-my-nose-its-the-80s", name: "80s Nose Tee", url: "https://square.link/u/MNylyPWt" },
+    { id: "rather-be-at-the-party", name: "Party Tee",       url: "https://square.link/u/c0IYd0hZ" },
+    { id: "jgo-flushed-the-beat",   name: "Flushed The Beat Tee",          url: "https://square.link/u/3N7xS4dR" },
+    { id: "restarted-our-night",    name: "Restarted Tee",      url: "https://square.link/u/QY9dNAEk" },
+    { id: "came-in-late",           name: "Came In Late Tee",                 url: "https://square.link/u/mZRnWiel" },
+    { id: "in-my-nose-its-the-80s", name: "80s Nose Tee", url: "https://square.link/u/UYJyC2Sb" },
   ],
 };
