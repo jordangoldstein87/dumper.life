@@ -39,7 +39,7 @@ window.DP = {
   shop: {
     home: null, // Square Online store URL once it is live (shop.dumper.life)
     price: "$1,000",
-    code: "FANCLUB96",
+    code: "DUMPER96",
   },
   merch: [
     { id: "rather-be-at-the-party", name: "Party Tee",       url: "https://square.link/u/VP4VbwZz" },

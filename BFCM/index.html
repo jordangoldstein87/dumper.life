@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dump Patrol Black Friday</title>
-<meta name="description" content="Black Friday: 96% off all Dump Patrol merch with code FANCLUB96.">
+<meta name="description" content="Black Friday: 96% off all Dump Patrol merch with code DUMPER96.">
 <meta property="og:title" content="DUMP PATROL · BLACK FRIDAY · 96% OFF ALL MERCH">
-<meta property="og:description" content="Code FANCLUB96 at checkout. Every Dump Patrol tee, 96% off.">
+<meta property="og:description" content="Code DUMPER96 at checkout. Every Dump Patrol tee, 96% off.">
 <meta property="og:image" content="https://dumper.life/BFCM/card.jpg">
 <meta property="og:image:width" content="1080"><meta property="og:image:height" content="1350">
 <meta property="og:url" content="https://dumper.life/BFCM/">
@@ -46,7 +46,7 @@ footer a{color:var(--gold)}
   <a href="/"><img class="logo" src="/img/logo.png" alt="Dump Patrol — The Mixtape"></a>
   <div class="bf">BLACK FRIDAY</div>
   <div class="off">96% OFF ALL MERCH</div>
-  <div class="code"><span>FANCLUB96</span><button id="copy">Copy code</button></div>
+  <div class="code"><span>DUMPER96</span><button id="copy">Copy code</button></div>
   <div class="sub">Enter the code at checkout · every tee, every size · while the sale runs</div>
 </header>
 <main class="wrap"><div class="grid" id="tees"></div></main>
@@ -59,7 +59,7 @@ document.getElementById('tees').innerHTML = D.merch.map(m => {
   return `<a class="tee" href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}><img src="/img/tee-${m.id}.jpg" alt="${m.name}" loading="lazy"><div><b>${m.name}</b><div class="p"><s>$1,000</s>$40 with code</div><span class="go">Shop →</span></div></a>`;
 }).join('');
 const b = document.getElementById('copy');
-b.onclick = async () => { try { await navigator.clipboard.writeText('FANCLUB96'); b.textContent = 'Copied ✓'; } catch { b.textContent = 'FANCLUB96'; } };
+b.onclick = async () => { try { await navigator.clipboard.writeText('DUMPER96'); b.textContent = 'Copied ✓'; } catch { b.textContent = 'DUMPER96'; } };
 </script>
 </body>
 </html>
