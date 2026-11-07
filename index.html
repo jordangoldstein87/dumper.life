@@ -33,6 +33,7 @@ h1{font:400 clamp(44px,10vw,104px)/.9 Anton,Impact,sans-serif;letter-spacing:.02
 section{padding:56px 0;border-top:1px solid var(--line)}
 h2{font:400 clamp(28px,5vw,44px) Anton,Impact,sans-serif;letter-spacing:.04em;margin-bottom:18px}
 h2 small{font:600 13px Inter;letter-spacing:.1em;color:var(--mute);margin-left:10px;text-transform:uppercase}
+.soonpill{display:inline-block;vertical-align:middle;margin-left:10px;font:700 12px Inter;letter-spacing:.08em;text-transform:uppercase;color:#1a0f05;background:var(--fire);padding:5px 10px;border-radius:999px}
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .svc a,.svc span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:700;font-size:14px;text-align:center}
 .svc a:hover{border-color:var(--gold)}
@@ -53,6 +54,13 @@ summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
 .tracks .l{color:var(--mute);font-size:13px;font-variant-numeric:tabular-nums}
 .tracks .pp{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a0f05;display:grid;place-items:center;font-size:13px;font-weight:900}
 .prog{height:3px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--fire)}
+.gate{background:var(--card);border:1px solid var(--gold);border-radius:14px;padding:18px}
+.gate p{margin-bottom:12px}.gate p span{color:var(--mute);font-size:14px}
+.gate .row{display:flex;gap:8px;flex-wrap:wrap}
+.gate input{flex:1;min-width:200px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#0d0907;color:var(--ink);font:600 16px Inter}
+.gate .bd{font:400 30px Anton,Impact,sans-serif;letter-spacing:.03em;color:var(--gold)}
+.gate small{display:block;margin-top:8px;color:var(--fire);min-height:1em}
+.gate button{cursor:pointer;font-size:15px}
 .dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .dl a{display:block;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none}
 .dl a:hover{border-color:var(--gold)}
@@ -91,7 +99,7 @@ footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;bo
 
 <main class="wrap">
   <section id="listen">
-    <h2>Stream it <small id="upd"></small></h2>
+    <h2>Stream it <span class="soonpill" id="soonpill">Coming soon to streaming</span></h2>
     <div class="svc" id="top"></div>
     <details><summary>Everywhere else it's available</summary><div class="more" id="more"></div></details>
   </section>
@@ -103,7 +111,13 @@ footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;bo
   </section>
 
   <section id="download">
-    <h2>Download it</h2>
+    <h2 id="dlhead">Download it</h2>
+    <form class="gate" id="gate" novalidate>
+      <p><b class="bd">Become a Dumper.</b><br><span>Sign up to join The Dumpers and the download unlocks: all 4 tracks, the animated video, the cover. Dumpers hear about every drop first.</span></p>
+      <div class="row"><input type="email" id="em" placeholder="you@email.com" autocomplete="email" required><button class="btn solid" type="submit">Become a Dumper</button></div>
+      <small id="gmsg"></small>
+    </form>
+    <div id="dlbox" hidden>
     <div class="dl">
       <a href="download/Dump%20Patrol%20-%20The%20Mixtape.zip" download>
         <b>⬇ The folder</b><small>Phone or computer · 37 MB zip</small>
@@ -115,6 +129,7 @@ footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;bo
       </a>
     </div>
     <div class="single" id="single"></div>
+    </div>
   </section>
 
   <section id="merch">
@@ -138,10 +153,10 @@ const ICON = {
   amazon:'<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#25D1DA"/><text x="12" y="13" font-size="6.5" font-weight="800" text-anchor="middle" font-family="Inter,Arial" fill="#0b2a33">music</text><path d="M6.5 15.5c3.4 2 7.6 2 11 0" stroke="#0b2a33" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M16.3 14.6l1.4.8-.5 1.5" stroke="#0b2a33" stroke-width="1.1" fill="none"/></svg>',
 };
 const L = D.LINKS;
-$('upd').textContent = L.updated ? 'Links checked ' + L.updated : 'Links landing as stores go live';
+if (L.top.concat(L.more).some(s => s.url)) $('soonpill').style.display = 'none';
 $('top').innerHTML = L.top.map(s => s.url
   ? `<a href="${s.url}" target="_blank" rel="noopener">${ICON[s.id]}${s.name}</a>`
-  : `<span class="soon">${ICON[s.id]}${s.name}<em>dropping soon</em></span>`).join('');
+  : `<span class="soon">${ICON[s.id]}${s.name}<em>coming soon</em></span>`).join('');
 const live = L.more.filter(s => s.url), soon = L.more.filter(s => !s.url);
 $('more').innerHTML = live.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join('')
   + soon.map(s => `<span>${s.name}</span>`).join('');
@@ -167,6 +182,24 @@ pl.onended = () => { if (cur < D.tracks.length-1) play(cur+1); else { cur=-1; pa
 $('single').innerHTML = D.tracks.map(t => `<a href="${encodeURI(t.file)}" download>⬇ ${t.n}. ${t.name}</a>`).join('')
   + `<a href="img/animated.mp4" download="Dump Patrol (Animated).mp4">⬇ Animated video</a>`;
 if (D.wavUrl) $('wav').href = D.wavUrl; else $('wav').style.display = 'none';
+
+// email gate on downloads
+const KEY = 'dp_email';
+function unlock(member){ $('gate').hidden = true; $('dlbox').hidden = false; if (member) $('dlhead').textContent = "You're a Dumper. Download it"; }
+let saved = null; try { saved = localStorage.getItem(KEY); } catch {}
+if (saved) unlock(true); else if (!D.signupUrl) unlock(false); // no list to join yet: leave downloads open
+$('gate').onsubmit = async e => {
+  e.preventDefault();
+  const em = $('em').value.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { $('gmsg').textContent = 'Enter a real email to become a Dumper.'; return; }
+  const btn = e.submitter || $('gate').querySelector('button'); btn.disabled = true; btn.textContent = 'Welcome, Dumper…';
+  if (D.signupUrl) {
+    const body = new URLSearchParams({ email: em, source: 'download', page: location.pathname, ref: document.referrer || '' });
+    try { await fetch(D.signupUrl, { method: 'POST', mode: 'no-cors', body }); } catch {}
+  }
+  try { localStorage.setItem(KEY, em); } catch {}
+  unlock(true);
+};
 
 // merch
 $('tees').innerHTML = D.merch.map(m => {

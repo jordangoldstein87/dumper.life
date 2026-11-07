@@ -34,6 +34,8 @@ window.DP = {
       { id: "hyperfollow", name: "CD Baby HyperFollow", url: null },
     ],
   },
+  // Google Apps Script web app that appends sign-ups to the "The Dumpers" sign-up sheet.
+  signupUrl: null,
   shop: {
     home: null, // Square Online store URL once it is live (shop.dumper.life)
     price: "$1,000",
