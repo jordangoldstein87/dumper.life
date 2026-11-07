@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumper.life Fan Club</title>
+<meta name="description" content="Black Friday: 96% off all Dump Patrol merch with code FANCLUB96.">
+<meta property="og:title" content="Dumper.life Fan Club · Black Friday · 96% off all merch">
+<meta property="og:description" content="Code FANCLUB96 at checkout. Dump Patrol — The Mixtape out now.">
+<meta property="og:image" content="https://dumper.life/fanclub/card.jpg">
+<meta property="og:image:width" content="1080"><meta property="og:image:height" content="1350">
+<meta property="og:url" content="https://dumper.life/fanclub/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../img/cover-600.jpg">
+<style>
+:root{--bg:#0d0907;--ink:#f6ead2;--mute:#b8a68a;--gold:#f5b73c;--fire:#ff5a1f}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;padding:24px 16px;text-align:center}
+img{width:min(100%,460px);border-radius:12px;display:block;margin:0 auto 18px}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+button,a{font:800 15px system-ui;padding:12px 20px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);background:none;text-decoration:none;cursor:pointer}
+.solid{background:var(--gold);color:#1a0f05}
+p{color:var(--mute);font-size:13px;margin-top:12px}
+</style>
+</head>
+<body>
+<main>
+  <img src="card.jpg" alt="Dumper.life Fan Club — Black Friday sale, 96% off all merch, code FANCLUB96">
+  <div class="row">
+    <button class="solid" id="copy">Copy code FANCLUB96</button>
+    <a id="shop" href="../#merch">Shop the merch</a>
+  </div>
+  <p>Enter the code at checkout. Applies to all Dump Patrol merch.</p>
+</main>
+<script src="../data.js"></script>
+<script>
+const b = document.getElementById('copy');
+b.onclick = async () => { try { await navigator.clipboard.writeText('FANCLUB96'); b.textContent = 'Copied ✓'; } catch { b.textContent = 'FANCLUB96'; } };
+if (window.DP && DP.shop.home) document.getElementById('shop').href = DP.shop.home;
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dump Patrol — The Mixtape</title>
+<meta name="description" content="Dump Patrol — The Mixtape. 818 Situate. Stream it everywhere, download it, cop the merch.">
+<meta property="og:title" content="DUMP PATROL — THE MIXTAPE">
+<meta property="og:description" content="Out now. Stream it, download it, cop the merch. 818 Situate.">
+<meta property="og:image" content="https://dumper.life/img/og.jpg">
+<meta property="og:url" content="https://dumper.life/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/cover-600.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0907;--ink:#f6ead2;--mute:#b8a68a;--gold:#f5b73c;--fire:#ff5a1f;--card:#1a120d;--line:#3a2a1d}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero{position:relative;min-height:92vh;display:grid;place-items:center;text-align:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:saturate(1.2)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,var(--bg) 85%)}
+.hero .in{position:relative;z-index:1;padding:48px 16px}
+.cover{width:min(78vw,380px);aspect-ratio:1;border-radius:6px;box-shadow:0 0 0 1px #ffffff18,0 30px 80px #ff5a1f55;display:block;margin:0 auto 24px}
+h1{font:400 clamp(44px,10vw,104px)/.9 Anton,Impact,sans-serif;letter-spacing:.02em;background:linear-gradient(#fff3c4,#f5b73c 55%,#c46b12);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 30px #f5b73c33}
+.sub{font:400 clamp(18px,3.4vw,28px) Anton,Impact,sans-serif;letter-spacing:.3em;color:var(--ink);margin-top:6px}
+.tag{color:var(--mute);margin-top:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none;border:1px solid var(--gold);color:var(--gold);background:#0008}
+.btn.solid{background:var(--gold);color:#1a0f05;border-color:var(--gold)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:400 clamp(28px,5vw,44px) Anton,Impact,sans-serif;letter-spacing:.04em;margin-bottom:18px}
+h2 small{font:600 13px Inter;letter-spacing:.1em;color:var(--mute);margin-left:10px;text-transform:uppercase}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.svc a,.svc span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:700;font-size:14px;text-align:center}
+.svc a:hover{border-color:var(--gold)}
+.svc .soon{opacity:.45}
+.svc svg{width:40px;height:40px}
+.svc em{font-style:normal;font-size:11px;color:var(--mute);font-weight:600}
+details{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
+.more{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.more a,.more span{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
+.more span{opacity:.45}
+.more a:hover{border-color:var(--gold);color:var(--gold)}
+.tracks{list-style:none;padding:0;display:grid;gap:8px}
+.tracks li{display:flex;align-items:center;gap:14px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer}
+.tracks li.on{border-color:var(--gold)}
+.tracks .n{font:400 22px Anton;color:var(--gold);width:22px}
+.tracks .t{flex:1;font-weight:700}
+.tracks .l{color:var(--mute);font-size:13px;font-variant-numeric:tabular-nums}
+.tracks .pp{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a0f05;display:grid;place-items:center;font-size:13px;font-weight:900}
+.prog{height:3px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--fire)}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dl a{display:block;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none}
+.dl a:hover{border-color:var(--gold)}
+.dl b{display:block;font-size:17px}.dl small{color:var(--mute)}
+.dl .files{margin-top:10px;font-size:13px;color:var(--mute)}
+.single{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.single a{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
+.merch{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.tee{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column}
+.tee img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#1c1c1e}
+.tee div{padding:10px 12px}
+.tee b{display:block;font-size:14px;line-height:1.25}
+.tee .p{color:var(--gold);font-weight:800;margin-top:4px}
+.tee .p s{color:var(--mute);font-weight:600;margin-right:6px}
+.fan{margin-top:18px;padding:16px;border:1px dashed var(--fire);border-radius:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.fan code{font:400 22px Anton;letter-spacing:.12em;color:var(--fire)}
+footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:640px){.svc{grid-template-columns:repeat(2,1fr)}.dl{grid-template-columns:1fr}.merch{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <video src="img/animated.mp4" autoplay muted loop playsinline poster="img/cover.jpg"></video>
+  <div class="in">
+    <img class="cover" src="img/cover-600.jpg" alt="Dump Patrol — The Mixtape cover">
+    <h1>DUMP PATROL</h1>
+    <div class="sub">★ THE MIXTAPE ★</div>
+    <div class="tag">818 · Situate · Shoup &amp; Victory</div>
+    <div class="cta">
+      <a class="btn solid" href="#listen">Listen now</a>
+      <a class="btn" href="#download">Download</a>
+      <a class="btn" href="#merch">Merch</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="listen">
+    <h2>Stream it <small id="upd"></small></h2>
+    <div class="svc" id="top"></div>
+    <details><summary>Everywhere else it's available</summary><div class="more" id="more"></div></details>
+  </section>
+
+  <section id="tracks">
+    <h2>Tracklist</h2>
+    <ol class="tracks" id="list"></ol>
+    <audio id="player" preload="none"></audio>
+  </section>
+
+  <section id="download">
+    <h2>Download it</h2>
+    <div class="dl">
+      <a href="download/Dump%20Patrol%20-%20The%20Mixtape.zip" download>
+        <b>⬇ The folder</b><small>Phone or computer · 37 MB zip</small>
+        <div class="files">4 tracks (256k AAC) · animated video · cover art</div>
+      </a>
+      <a id="wav" href="#" download>
+        <b>⬇ Lossless WAV folder</b><small>Computer · 143 MB zip</small>
+        <div class="files">4 tracks (16-bit WAV) · animated video · cover art</div>
+      </a>
+    </div>
+    <div class="single" id="single"></div>
+  </section>
+
+  <section id="merch">
+    <h2>Merch <small>Vintage wash tee</small></h2>
+    <div class="merch" id="tees"></div>
+    <div class="fan">
+      <div><b>Dumper.life Fan Club · Black Friday</b><br><span style="color:var(--mute);font-size:14px">96% off all merch at checkout</span></div>
+      <code id="code"></code>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Dump Patrol · dumper.life</footer>
+
+<script src="data.js"></script>
+<script>
+const D = window.DP, $ = id => document.getElementById(id);
+const ICON = {
+  spotify:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M6.5 9.3c3.8-1.1 8-.8 11.2 1M7 12.4c3.1-.9 6.6-.6 9.3.9M7.6 15.3c2.5-.6 5-.4 7.2.8" stroke="#000" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
+  apple:'<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FA2D48"/><path d="M15.5 5.5v8.7a2.2 2.2 0 1 1-1.4-2V8.1l-4.6 1v6.6a2.2 2.2 0 1 1-1.4-2V6.9z" fill="#fff"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF0000"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="#fff" stroke-width="1.3"/><path d="M10.3 9.3v5.4l4.4-2.7z" fill="#fff"/></svg>',
+  amazon:'<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#25D1DA"/><text x="12" y="13" font-size="6.5" font-weight="800" text-anchor="middle" font-family="Inter,Arial" fill="#0b2a33">music</text><path d="M6.5 15.5c3.4 2 7.6 2 11 0" stroke="#0b2a33" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M16.3 14.6l1.4.8-.5 1.5" stroke="#0b2a33" stroke-width="1.1" fill="none"/></svg>',
+};
+const L = D.LINKS;
+$('upd').textContent = L.updated ? 'Links checked ' + L.updated : 'Links landing as stores go live';
+$('top').innerHTML = L.top.map(s => s.url
+  ? `<a href="${s.url}" target="_blank" rel="noopener">${ICON[s.id]}${s.name}</a>`
+  : `<span class="soon">${ICON[s.id]}${s.name}<em>dropping soon</em></span>`).join('');
+const live = L.more.filter(s => s.url), soon = L.more.filter(s => !s.url);
+$('more').innerHTML = live.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join('')
+  + soon.map(s => `<span>${s.name}</span>`).join('');
+document.querySelector('summary').textContent = `Everywhere else it's available (${live.length} live${soon.length ? ', ' + soon.length + ' coming' : ''})`;
+
+// tracklist player
+const pl = $('player');
+$('list').innerHTML = D.tracks.map((t,i) => `<li data-i="${i}"><span class="n">${t.n}</span><span class="t">${t.name}<div class="prog"><i></i></div></span><span class="l">${t.len}</span><span class="pp">▶</span></li>`).join('');
+let cur = -1;
+const rows = [...document.querySelectorAll('.tracks li')];
+function play(i){
+  if (i === cur && !pl.paused) { pl.pause(); return; }
+  if (i !== cur) { pl.src = D.tracks[i].file; cur = i; }
+  pl.play();
+}
+function paint(){ rows.forEach((r,i)=>{ r.classList.toggle('on', i===cur); r.querySelector('.pp').textContent = (i===cur && !pl.paused) ? '❚❚' : '▶'; }); }
+rows.forEach(r => r.onclick = () => play(+r.dataset.i));
+pl.onplay = pl.onpause = paint;
+pl.ontimeupdate = () => { if (cur>=0) rows[cur].querySelector('i').style.width = (100*pl.currentTime/(pl.duration||1)) + '%'; };
+pl.onended = () => { if (cur < D.tracks.length-1) play(cur+1); else { cur=-1; paint(); } };
+
+// downloads
+$('single').innerHTML = D.tracks.map(t => `<a href="${encodeURI(t.file)}" download>⬇ ${t.n}. ${t.name}</a>`).join('')
+  + `<a href="img/animated.mp4" download="Dump Patrol (Animated).mp4">⬇ Animated video</a>`;
+if (D.wavUrl) $('wav').href = D.wavUrl; else $('wav').style.display = 'none';
+
+// merch
+$('tees').innerHTML = D.merch.map(m => {
+  const href = m.url || D.shop.home;
+  const tag = href ? 'a' : 'div';
+  return `<${tag} class="tee" ${href ? `href="${href}" target="_blank" rel="noopener"` : ''}><img src="img/tee-${m.id}.jpg" alt="${m.name} tee" loading="lazy"><div><b>${m.name}</b><div class="p">${D.shop.price}</div></div></${tag}>`;
+}).join('');
+$('code').textContent = D.shop.code;
+</script>
+</body>
+</html>
