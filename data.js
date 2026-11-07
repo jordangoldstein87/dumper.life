@@ -42,10 +42,10 @@ window.DP = {
     code: "FANCLUB96",
   },
   merch: [
-    { id: "rather-be-at-the-party", name: "Rather Be At The Party",       url: null },
-    { id: "jgo-flushed-the-beat",   name: "JGO Flushed The Beat",          url: null },
-    { id: "restarted-our-night",    name: "Just Restarted Our Night",      url: null },
-    { id: "came-in-late",           name: "Came In Late!",                 url: null },
-    { id: "in-my-nose-its-the-80s", name: "It's 2026 But In My Nose It's The 80s", url: null },
+    { id: "rather-be-at-the-party", name: "Party Tee",       url: null },
+    { id: "jgo-flushed-the-beat",   name: "Flushed The Beat Tee",          url: null },
+    { id: "restarted-our-night",    name: "Restarted Tee",      url: null },
+    { id: "came-in-late",           name: "Came In Late Tee",                 url: null },
+    { id: "in-my-nose-its-the-80s", name: "80s Nose Tee", url: null },
   ],
 };

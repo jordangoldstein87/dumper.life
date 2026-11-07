@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dump Patrol — The Mixtape</title>
-<meta name="description" content="Dump Patrol — The Mixtape. 818 Situate. Stream it everywhere, download it, cop the merch.">
+<meta name="description" content="Dump Patrol — The Mixtape. Stream it everywhere, download it, cop the merch.">
 <meta property="og:title" content="DUMP PATROL — THE MIXTAPE">
-<meta property="og:description" content="Out now. Stream it, download it, cop the merch. 818 Situate.">
+<meta property="og:description" content="Out now. Stream it, download it, cop the merch.">
 <meta property="og:image" content="https://dumper.life/img/og.jpg">
 <meta property="og:url" content="https://dumper.life/">
 <meta name="twitter:card" content="summary_large_image">
@@ -14,13 +14,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d0907;--ink:#f6ead2;--mute:#b8a68a;--gold:#f5b73c;--fire:#ff5a1f;--card:#1a120d;--line:#3a2a1d}
+:root{--bg:#0c0806;--ink:#fbf1dc;--mute:#bfa37f;--gold:#f6b93b;--gold2:#ffe7a3;--fire:#ff6a1a;--ember:#c2410c;--card:#1b120c;--card2:#24170e;--line:#3d2a1a;--sign:#1f6b45}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:hidden}
+body{background:radial-gradient(1200px 600px at 50% -10%,#3a1d0a 0%,transparent 60%),var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:hidden}
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 .hero{position:relative;min-height:92vh;display:grid;place-items:center;text-align:center;overflow:hidden}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;filter:saturate(1.2)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:saturate(1.2) brightness(.8);pointer-events:none}
+.hero video::-webkit-media-controls,.hero video::-webkit-media-controls-panel,.hero video::-webkit-media-controls-start-playback-button,.hero video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none}
+.logo{margin:0}.logo img{width:min(92vw,620px);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 6px 30px #ff7a1f55)}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,var(--bg) 85%)}
 .hero .in{position:relative;z-index:1;padding:48px 16px}
 .cover{width:min(78vw,380px);aspect-ratio:1;border-radius:6px;box-shadow:0 0 0 1px #ffffff18,0 30px 80px #ff5a1f55;display:block;margin:0 auto 24px}
@@ -29,13 +31,13 @@ h1{font:400 clamp(44px,10vw,104px)/.9 Anton,Impact,sans-serif;letter-spacing:.02
 .tag{color:var(--mute);margin-top:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
 .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:800;text-decoration:none;border:1px solid var(--gold);color:var(--gold);background:#0008}
-.btn.solid{background:var(--gold);color:#1a0f05;border-color:var(--gold)}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font:400 clamp(28px,5vw,44px) Anton,Impact,sans-serif;letter-spacing:.04em;margin-bottom:18px}
+.btn.solid{background:linear-gradient(180deg,var(--gold2),var(--gold) 45%,#d98a1c);color:#1a0f05;border-color:#ffd77a;box-shadow:0 6px 24px #f6b93b33}
+section{padding:56px 0;border-top:1px solid;border-image:linear-gradient(90deg,transparent,#6b4423,transparent) 1}
+h2{font:400 clamp(28px,5vw,44px) Anton,Impact,sans-serif;letter-spacing:.04em;margin-bottom:18px;background:linear-gradient(180deg,var(--gold2),var(--gold) 60%,#d98a1c);-webkit-background-clip:text;background-clip:text;color:transparent}
 h2 small{font:600 13px Inter;letter-spacing:.1em;color:var(--mute);margin-left:10px;text-transform:uppercase}
-.soonpill{display:inline-block;vertical-align:middle;margin-left:10px;font:700 12px Inter;letter-spacing:.08em;text-transform:uppercase;color:#1a0f05;background:var(--fire);padding:5px 10px;border-radius:999px}
+.soonpill{display:inline-block;vertical-align:middle;margin-left:10px;font:700 12px Inter;letter-spacing:.08em;text-transform:uppercase;color:#fff7e6;background:linear-gradient(180deg,var(--fire),var(--ember));-webkit-text-fill-color:#fff7e6;padding:5px 10px;border-radius:999px}
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.svc a,.svc span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:700;font-size:14px;text-align:center}
+.svc a,.svc span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 8px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:700;font-size:14px;text-align:center}
 .svc a:hover{border-color:var(--gold)}
 .svc .soon{opacity:.45}
 .svc svg{width:40px;height:40px}
@@ -54,11 +56,13 @@ summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
 .tracks .l{color:var(--mute);font-size:13px;font-variant-numeric:tabular-nums}
 .tracks .pp{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#1a0f05;display:grid;place-items:center;font-size:13px;font-weight:900}
 .prog{height:3px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--fire)}
-.gate{background:var(--card);border:1px solid var(--gold);border-radius:14px;padding:18px}
+.gate{background:linear-gradient(160deg,#2a1a0d,var(--card) 60%);border:1px solid #8a5a22;border-radius:16px;padding:22px;box-shadow:inset 0 1px 0 #ffe7a322}
+.gate .vip{display:inline-block;font:800 11px Inter;letter-spacing:.14em;text-transform:uppercase;color:#1a0f05;background:var(--gold);padding:4px 9px;border-radius:999px;margin-bottom:8px}
+.gate p span:last-child{display:block;margin-top:4px}
 .gate p{margin-bottom:12px}.gate p span{color:var(--mute);font-size:14px}
 .gate .row{display:flex;gap:8px;flex-wrap:wrap}
 .gate input{flex:1;min-width:200px;padding:12px 14px;border-radius:999px;border:1px solid var(--line);background:#0d0907;color:var(--ink);font:600 16px Inter}
-.gate .bd{font:400 30px Anton,Impact,sans-serif;letter-spacing:.03em;color:var(--gold)}
+.gate .bd{display:block;font:400 34px Anton,Impact,sans-serif;letter-spacing:.03em;color:var(--ink)}
 .gate small{display:block;margin-top:8px;color:var(--fire);min-height:1em}
 .gate button{cursor:pointer;font-size:15px}
 .dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -77,20 +81,26 @@ summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
 .tee .p s{color:var(--mute);font-weight:600;margin-right:6px}
 .fan{margin-top:18px;padding:16px;border:1px dashed var(--fire);border-radius:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
 .fan code{font:400 22px Anton;letter-spacing:.12em;color:var(--fire)}
-footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+footer{padding:40px 0 120px;color:var(--mute);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:16px;background:linear-gradient(180deg,#2a1a0dee,#140c07f2);border:1px solid #8a5a22;box-shadow:0 12px 40px #000a;backdrop-filter:blur(10px);max-width:720px;margin:0 auto;animation:up .3s ease}
+.bar[hidden]{display:none}
+@keyframes up{from{transform:translateY(120%)}to{transform:none}}
+.bar img{width:48px;height:48px;border-radius:8px}
+.bar .meta{flex:1;min-width:0}.bar .meta b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar .meta span{font-size:12px;color:var(--mute)}
+.bprog{height:4px;background:#3d2a1a;border-radius:4px;margin-top:6px;cursor:pointer}.bprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--fire));border-radius:4px}
+.ctl{display:flex;gap:6px}.ctl button{width:38px;height:38px;border-radius:50%;border:1px solid #6b4423;background:#0c0806;color:var(--ink);font-size:14px;cursor:pointer}
+.ctl .pl{width:46px;height:46px;background:linear-gradient(180deg,var(--gold2),var(--gold) 45%,#d98a1c);color:#1a0f05;border-color:#ffd77a;font-weight:900}
 @media (max-width:640px){.svc{grid-template-columns:repeat(2,1fr)}.dl{grid-template-columns:1fr}.merch{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <header class="hero">
-  <video src="img/animated.mp4" autoplay muted loop playsinline poster="img/cover.jpg"></video>
+  <video src="img/animated.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" poster="img/cover.jpg" aria-hidden="true" tabindex="-1"></video>
   <div class="in">
     <img class="cover" src="img/cover-600.jpg" alt="Dump Patrol — The Mixtape cover">
-    <h1>DUMP PATROL</h1>
-    <div class="sub">★ THE MIXTAPE ★</div>
-    <div class="tag">818 · Situate · Shoup &amp; Victory</div>
+    <h1 class="logo"><img src="img/logo.png" alt="Dump Patrol — The Mixtape"></h1>
     <div class="cta">
-      <a class="btn solid" href="#listen">Listen now</a>
+      <a class="btn solid" href="#tracks" id="heroplay">▶ Listen now</a>
       <a class="btn" href="#download">Download</a>
       <a class="btn" href="#merch">Merch</a>
     </div>
@@ -98,23 +108,24 @@ footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;bo
 </header>
 
 <main class="wrap">
-  <section id="listen">
+  <section id="tracks">
+    <h2>Listen now</h2>
+    <ol class="tracks" id="list"></ol>
+    <audio id="player" preload="none"></audio>
+  </section>
+
+  <section id="stream">
     <h2>Stream it <span class="soonpill" id="soonpill">Coming soon to streaming</span></h2>
     <div class="svc" id="top"></div>
     <details><summary>Everywhere else it's available</summary><div class="more" id="more"></div></details>
   </section>
 
-  <section id="tracks">
-    <h2>Tracklist</h2>
-    <ol class="tracks" id="list"></ol>
-    <audio id="player" preload="none"></audio>
-  </section>
 
   <section id="download">
-    <h2 id="dlhead">Download it</h2>
+    <h2 id="dlhead">Download the record</h2>
     <form class="gate" id="gate" novalidate>
-      <p><b class="bd">Become a Dumper.</b><br><span>Sign up to join The Dumpers and the download unlocks: all 4 tracks, the animated video, the cover. Dumpers hear about every drop first.</span></p>
-      <div class="row"><input type="email" id="em" placeholder="you@email.com" autocomplete="email" required><button class="btn solid" type="submit">Become a Dumper</button></div>
+      <p><span class="vip">Exclusive VIP download</span><b class="bd">Become a Dumper.</b><span>Drop your email to download <b>Dump Patrol — The Mixtape</b> to your phone or computer: all 4 tracks, the animated video and the cover.</span></p>
+      <div class="row"><input type="email" id="em" placeholder="you@email.com" autocomplete="email" required><button class="btn solid" type="submit">⬇ Become a Dumper &amp; download</button></div>
       <small id="gmsg"></small>
     </form>
     <div id="dlbox" hidden>
@@ -135,12 +146,13 @@ footer{padding:40px 0 60px;color:var(--mute);font-size:13px;text-align:center;bo
   <section id="merch">
     <h2>Merch <small>Vintage wash tee</small></h2>
     <div class="merch" id="tees"></div>
-    <div class="fan">
-      <div><b>Dumper.life Fan Club · Black Friday</b><br><span style="color:var(--mute);font-size:14px">96% off all merch at checkout</span></div>
-      <code id="code"></code>
-    </div>
   </section>
 </main>
+<div class="bar" id="bar" hidden>
+  <img src="img/cover-600.jpg" alt="">
+  <div class="meta"><b id="bnow">1. We Back</b><span>Dump Patrol — The Mixtape</span><div class="bprog" id="bseek"><i id="bfill"></i></div></div>
+  <div class="ctl"><button id="bprev" aria-label="Previous">⏮</button><button id="bplay" class="pl" aria-label="Play/pause">❚❚</button><button id="bnext" aria-label="Next">⏭</button></div>
+</div>
 <footer>© 2026 Dump Patrol · dumper.life</footer>
 
 <script src="data.js"></script>
@@ -169,13 +181,24 @@ let cur = -1;
 const rows = [...document.querySelectorAll('.tracks li')];
 function play(i){
   if (i === cur && !pl.paused) { pl.pause(); return; }
-  if (i !== cur) { pl.src = D.tracks[i].file; cur = i; }
-  pl.play();
+  if (i !== cur) { pl.src = D.tracks[i].file; cur = i;
+    if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: D.tracks[i].name, artist: 'Dump Patrol', album: 'Dump Patrol — The Mixtape', artwork: [{ src: 'img/cover-600.jpg', sizes: '600x600', type: 'image/jpeg' }] }); }
+  pl.play(); paint();
 }
-function paint(){ rows.forEach((r,i)=>{ r.classList.toggle('on', i===cur); r.querySelector('.pp').textContent = (i===cur && !pl.paused) ? '❚❚' : '▶'; }); }
+function paint(){
+  rows.forEach((r,i)=>{ r.classList.toggle('on', i===cur); r.querySelector('.pp').textContent = (i===cur && !pl.paused) ? '❚❚' : '▶'; });
+  if (cur >= 0) { $('bar').hidden = false; $('bnow').textContent = D.tracks[cur].n + '. ' + D.tracks[cur].name; }
+  $('bplay').textContent = pl.paused ? '▶' : '❚❚';
+}
+$('bplay').onclick = () => cur < 0 ? play(0) : (pl.paused ? pl.play() : pl.pause());
+$('bnext').onclick = () => play((cur + 1) % D.tracks.length);
+$('bprev').onclick = () => (pl.currentTime > 3 ? (pl.currentTime = 0) : play((cur - 1 + D.tracks.length) % D.tracks.length));
+$('bseek').onclick = e => { const r = e.currentTarget.getBoundingClientRect(); if (pl.duration) pl.currentTime = pl.duration * (e.clientX - r.left) / r.width; };
+$('heroplay').onclick = e => { e.preventDefault(); play(0); document.getElementById('tracks').scrollIntoView({behavior:'smooth'}); };
+if ('mediaSession' in navigator) { navigator.mediaSession.setActionHandler('nexttrack', () => $('bnext').click()); navigator.mediaSession.setActionHandler('previoustrack', () => $('bprev').click()); }
 rows.forEach(r => r.onclick = () => play(+r.dataset.i));
 pl.onplay = pl.onpause = paint;
-pl.ontimeupdate = () => { if (cur>=0) rows[cur].querySelector('i').style.width = (100*pl.currentTime/(pl.duration||1)) + '%'; };
+pl.ontimeupdate = () => { if (cur>=0) { const w = (100*pl.currentTime/(pl.duration||1)) + '%'; rows[cur].querySelector('i').style.width = w; $('bfill').style.width = w; } };
 pl.onended = () => { if (cur < D.tracks.length-1) play(cur+1); else { cur=-1; paint(); } };
 
 // downloads
@@ -185,14 +208,14 @@ if (D.wavUrl) $('wav').href = D.wavUrl; else $('wav').style.display = 'none';
 
 // email gate on downloads
 const KEY = 'dp_email';
-function unlock(member){ $('gate').hidden = true; $('dlbox').hidden = false; if (member) $('dlhead').textContent = "You're a Dumper. Download it"; }
+function unlock(member){ $('gate').hidden = true; $('dlbox').hidden = false; if (member) $('dlhead').textContent = "You're a Dumper. Download the record"; }
 let saved = null; try { saved = localStorage.getItem(KEY); } catch {}
 if (saved) unlock(true); else if (!D.signupUrl) unlock(false); // no list to join yet: leave downloads open
 $('gate').onsubmit = async e => {
   e.preventDefault();
   const em = $('em').value.trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { $('gmsg').textContent = 'Enter a real email to become a Dumper.'; return; }
-  const btn = e.submitter || $('gate').querySelector('button'); btn.disabled = true; btn.textContent = 'Welcome, Dumper…';
+  const btn = e.submitter || $('gate').querySelector('button'); btn.disabled = true; btn.textContent = 'Unlocking…';
   if (D.signupUrl) {
     const body = new URLSearchParams({ email: em, source: 'download', page: location.pathname, ref: document.referrer || '' });
     try { await fetch(D.signupUrl, { method: 'POST', mode: 'no-cors', body }); } catch {}
@@ -207,7 +230,6 @@ $('tees').innerHTML = D.merch.map(m => {
   const tag = href ? 'a' : 'div';
   return `<${tag} class="tee" ${href ? `href="${href}" target="_blank" rel="noopener"` : ''}><img src="img/tee-${m.id}.jpg" alt="${m.name} tee" loading="lazy"><div><b>${m.name}</b><div class="p">${D.shop.price}</div></div></${tag}>`;
 }).join('');
-$('code').textContent = D.shop.code;
 </script>
 </body>
 </html>

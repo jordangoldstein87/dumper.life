@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dump Patrol Black Friday</title>
+<meta name="description" content="Black Friday: 96% off all Dump Patrol merch with code FANCLUB96.">
+<meta property="og:title" content="DUMP PATROL · BLACK FRIDAY · 96% OFF ALL MERCH">
+<meta property="og:description" content="Code FANCLUB96 at checkout. Every Dump Patrol tee, 96% off.">
+<meta property="og:image" content="https://dumper.life/BFCM/card.jpg">
+<meta property="og:image:width" content="1080"><meta property="og:image:height" content="1350">
+<meta property="og:url" content="https://dumper.life/BFCM/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/cover-600.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0806;--ink:#fbf1dc;--mute:#bfa37f;--gold:#f6b93b;--gold2:#ffe7a3;--fire:#ff6a1a;--ember:#c2410c;--card:#1b120c;--card2:#24170e;--line:#3d2a1a}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(1200px 700px at 50% -10%,#4a210a 0%,transparent 60%),var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.splash{text-align:center;padding:40px 16px 28px}
+.splash img.logo{width:min(80vw,460px);height:auto;filter:drop-shadow(0 6px 30px #ff7a1f55)}
+.bf{font:400 clamp(54px,13vw,120px)/.95 Anton,Impact,sans-serif;letter-spacing:.02em;margin-top:10px;background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,#d98a1c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.off{font:400 clamp(34px,8vw,72px)/1 Anton,Impact,sans-serif;color:var(--fire);margin-top:6px;text-shadow:0 4px 30px #ff6a1a55}
+.code{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:10px 10px 10px 22px;border-radius:999px;background:#140c07;border:1px solid #8a5a22}
+.code span{font:400 26px Anton;letter-spacing:.12em;color:var(--gold)}
+.code button{font:800 14px Inter;padding:10px 16px;border-radius:999px;border:0;cursor:pointer;color:#1a0f05;background:linear-gradient(180deg,var(--gold2),var(--gold) 45%,#d98a1c)}
+.sub{color:var(--mute);margin-top:12px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;padding:20px 0 40px}
+.tee{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column}
+.tee:hover{border-color:var(--gold)}
+.tee img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#1c1c1e}
+.tee div{padding:10px 12px 14px}
+.tee b{display:block;font-size:15px}
+.tee .p{margin-top:4px;font-weight:800;color:var(--fire)}
+.tee .p s{color:var(--mute);font-weight:600;margin-right:6px}
+.tee .go{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:13px}
+footer a{color:var(--gold)}
+@media (max-width:640px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="splash">
+  <a href="/"><img class="logo" src="/img/logo.png" alt="Dump Patrol — The Mixtape"></a>
+  <div class="bf">BLACK FRIDAY</div>
+  <div class="off">96% OFF ALL MERCH</div>
+  <div class="code"><span>FANCLUB96</span><button id="copy">Copy code</button></div>
+  <div class="sub">Enter the code at checkout · every tee, every size · while the sale runs</div>
+</header>
+<main class="wrap"><div class="grid" id="tees"></div></main>
+<footer>Dump Patrol — The Mixtape · <a href="/">dumper.life</a></footer>
+<script src="/data.js"></script>
+<script>
+const D = window.DP;
+document.getElementById('tees').innerHTML = D.merch.map(m => {
+  const href = m.url || D.shop.home || '/#merch';
+  return `<a class="tee" href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}><img src="/img/tee-${m.id}.jpg" alt="${m.name}" loading="lazy"><div><b>${m.name}</b><div class="p"><s>$1,000</s>$40 with code</div><span class="go">Shop →</span></div></a>`;
+}).join('');
+const b = document.getElementById('copy');
+b.onclick = async () => { try { await navigator.clipboard.writeText('FANCLUB96'); b.textContent = 'Copied ✓'; } catch { b.textContent = 'FANCLUB96'; } };
+</script>
+</body>
+</html>
