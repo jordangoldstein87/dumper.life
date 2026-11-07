@@ -34,8 +34,9 @@ window.DP = {
       { id: "hyperfollow", name: "CD Baby HyperFollow", url: null },
     ],
   },
-  // Google Apps Script web app that appends sign-ups to the "The Dumpers" sign-up sheet.
-  signupUrl: null,
+  // Google Form "The Dumpers" (owned by Jordan): every sign-up lands in its Responses tab.
+  signupUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfLNm5oIRVKDzbI__FSvRso3w0UpQZ8PLfPFC_A4H5BRCkg3A/formResponse",
+  signupField: "entry.1049822494",
   shop: {
     home: null, // Square Online store URL once it is live (shop.dumper.life)
     price: "$1,000",

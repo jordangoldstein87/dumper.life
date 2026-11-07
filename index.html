@@ -229,7 +229,7 @@ $('gate').onsubmit = async e => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { $('gmsg').textContent = 'Enter a real email to become a Dumper.'; return; }
   const btn = e.submitter || $('gate').querySelector('button'); btn.disabled = true; btn.textContent = 'Unlocking…';
   if (D.signupUrl) {
-    const body = new URLSearchParams({ email: em, source: 'download', page: location.pathname, ref: document.referrer || '' });
+    const body = new URLSearchParams({ [D.signupField]: em });
     try { await fetch(D.signupUrl, { method: 'POST', mode: 'no-cors', body }); } catch {}
   }
   try { localStorage.setItem(KEY, em); } catch {}
