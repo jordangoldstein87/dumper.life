@@ -20,12 +20,12 @@
     const a = e.target; if (!(a instanceof HTMLAudioElement) || a.muted) return;
     const n = name(a.currentSrc || a.src), k = 'p' + n;
     if (!seen[k]) { seen[k] = 1; send('play', n); }
-    a.ontimeupdate = () => {
+    if (!a.dataset.dpT) { a.dataset.dpT = 1; a.addEventListener('timeupdate', () => {
       if (!a.duration) return;
       const n2 = name(a.currentSrc || a.src), f = a.currentTime / a.duration;
       if (f > 0.5 && !seen['h' + n2]) { seen['h' + n2] = 1; send('half', n2); }
       if (f > 0.95 && !seen['f' + n2]) { seen['f' + n2] = 1; send('finish', n2); }
-    };
+    }); }
   }, true);
   document.addEventListener('click', e => {
     const a = e.target.closest && e.target.closest('a[download]');
