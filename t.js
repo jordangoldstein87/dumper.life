@@ -17,7 +17,7 @@
   const name = src => { try { return decodeURIComponent(src.split('/').pop()).replace(/\.\w+$/, ''); } catch { return src; } };
   const seen = {};
   document.addEventListener('play', e => {
-    const a = e.target; if (!(a instanceof HTMLMediaElement)) return;
+    const a = e.target; if (!(a instanceof HTMLAudioElement) || a.muted) return;
     const n = name(a.currentSrc || a.src), k = 'p' + n;
     if (!seen[k]) { seen[k] = 1; send('play', n); }
     a.ontimeupdate = () => {
