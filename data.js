@@ -10,7 +10,7 @@ window.DP = {
   ],
   // url: null until CD Baby's delivery shows up on that service; the tracker fills these in.
   LINKS: {
-    updated: null,
+    updated: "Nov 17",
     top: [
       { id: "spotify", name: "Spotify",       url: null },
       { id: "apple",   name: "Apple Music",   url: null },
@@ -19,7 +19,7 @@ window.DP = {
     ],
     more: [
       { id: "tidal",    name: "TIDAL",         url: null },
-      { id: "deezer",   name: "Deezer",        url: null },
+      { id: "deezer",   name: "Deezer",        url: "https://www.deezer.com/album/1148752851" },
       { id: "pandora",  name: "Pandora",       url: null },
       { id: "itunes",   name: "iTunes Store",  url: null },
       { id: "iheart",   name: "iHeartRadio",   url: null },
