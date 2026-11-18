@@ -12,7 +12,7 @@ window.DP = {
   LINKS: {
     updated: "Nov 18",
     top: [
-      { id: "spotify", name: "Spotify",       url: null },
+      { id: "spotify", name: "Spotify",       url: "https://open.spotify.com/album/1MbVuKO2ZLIZJEwAwn8WnH" },
       { id: "apple",   name: "Apple Music",   url: "https://music.apple.com/us/album/the-mixtape-ep/6835745509" },
       { id: "youtube", name: "YouTube Music", url: null },
       { id: "amazon",  name: "Amazon Music",  url: null },

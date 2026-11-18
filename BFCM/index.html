@@ -36,6 +36,12 @@ a{color:inherit}
 .tee .p{margin-top:4px;font-weight:800;color:var(--fire)}
 .tee .p s{color:var(--mute);font-weight:600;margin-right:6px}
 .tee .go{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.stream{margin:26px auto 0;max-width:560px;padding:16px 18px;border-radius:16px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line)}
+.stream h3{font:400 22px/1.1 Anton,Impact,sans-serif;letter-spacing:.06em;color:var(--gold)}
+.stream .svc{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.stream a{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:#140c07;border:1px solid #8a5a22;text-decoration:none;font-weight:800}
+.stream a:hover{border-color:var(--gold)}
+.stream svg{width:24px;height:24px}
 footer{padding:30px 0 50px;text-align:center;color:var(--mute);font-size:13px}
 footer a{color:var(--gold)}
 @media (max-width:640px){.grid{grid-template-columns:1fr 1fr}}
@@ -48,16 +54,26 @@ footer a{color:var(--gold)}
   <div class="off">96% OFF ALL MERCH</div>
   <div class="code"><span>DUMPER96</span><button id="copy">Copy code</button></div>
   <div class="sub">Enter the code at checkout · every tee, every size · while the sale runs</div>
+  <div class="stream" id="stream" hidden><h3>STREAMING NOW</h3><div class="svc" id="svc"></div></div>
 </header>
 <main class="wrap"><div class="grid" id="tees"></div></main>
 <footer>Dump Patrol — The Mixtape · <a href="/">dumper.life</a></footer>
-<script src="/data.js?v=1794101669"></script>
+<script src="/data.js?v=1795019094"></script>
 <script>
 const D = window.DP;
 document.getElementById('tees').innerHTML = D.merch.map(m => {
   const href = m.url || D.shop.home || '/#merch';
   return `<a class="tee" href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}><img src="/img/tee-${m.id}.jpg" alt="${m.name}" loading="lazy"><div><b>${m.name}</b><div class="p"><s>$1,000</s>$40 with code</div><span class="go">Shop →</span></div></a>`;
 }).join('');
+const ICON = {
+  spotify:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M6.5 9.3c3.8-1.1 8-.8 11.2 1M7 12.4c3.1-.9 6.6-.6 9.3.9M7.6 15.3c2.5-.6 5-.4 7.2.8" stroke="#000" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
+  apple:'<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FA2D48"/><path d="M15.5 5.5v8.7a2.2 2.2 0 1 1-1.4-2V8.1l-4.6 1v6.6a2.2 2.2 0 1 1-1.4-2V6.9z" fill="#fff"/></svg>',
+};
+const svc = D.LINKS.top.filter(s => ICON[s.id] && s.url);
+if (svc.length) {
+  document.getElementById('svc').innerHTML = svc.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${ICON[s.id]}${s.name}</a>`).join('');
+  document.getElementById('stream').hidden = false;
+}
 const b = document.getElementById('copy');
 b.onclick = async () => { try { await navigator.clipboard.writeText('DUMPER96'); b.textContent = 'Copied ✓'; } catch { b.textContent = 'DUMPER96'; } };
 </script>
