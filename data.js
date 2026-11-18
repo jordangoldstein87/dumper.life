@@ -10,10 +10,10 @@ window.DP = {
   ],
   // url: null until CD Baby's delivery shows up on that service; the tracker fills these in.
   LINKS: {
-    updated: "Nov 17",
+    updated: "Nov 18",
     top: [
       { id: "spotify", name: "Spotify",       url: null },
-      { id: "apple",   name: "Apple Music",   url: null },
+      { id: "apple",   name: "Apple Music",   url: "https://music.apple.com/us/album/the-mixtape-ep/6835745509" },
       { id: "youtube", name: "YouTube Music", url: null },
       { id: "amazon",  name: "Amazon Music",  url: null },
     ],
@@ -21,7 +21,7 @@ window.DP = {
       { id: "tidal",    name: "TIDAL",         url: null },
       { id: "deezer",   name: "Deezer",        url: "https://www.deezer.com/album/1148752851" },
       { id: "pandora",  name: "Pandora",       url: null },
-      { id: "itunes",   name: "iTunes Store",  url: null },
+      { id: "itunes",   name: "iTunes Store",  url: "https://itunes.apple.com/us/album/the-mixtape-ep/6835745509" },
       { id: "iheart",   name: "iHeartRadio",   url: null },
       { id: "tiktok",   name: "TikTok",        url: null },
       { id: "instagram",name: "Instagram / Facebook", url: null },
