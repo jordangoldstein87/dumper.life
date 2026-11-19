@@ -72,9 +72,9 @@ footer a{color:var(--gold)}
 <script src="/data.js?v=1795019094"></script>
 <script>
 const D = window.DP;
-// ?tee=<id> puts that tee up front as a featured pick (e.g. /BFCM/trae/ → came-in-late)
+// ?tee=<id> (or <html data-tee>) puts that tee up front as a featured pick (e.g. /BFCM/trae/ → came-in-late)
 const PICKS = { 'came-in-late': "TRAE'S TEE" };
-const pick = D.merch.find(m => m.id === new URLSearchParams(location.search).get('tee'));
+const pick = D.merch.find(m => m.id === (document.documentElement.dataset.tee || new URLSearchParams(location.search).get('tee')));
 if (pick) {
   const f = document.getElementById('feat'), href = pick.url || D.shop.home || '/#merch';
   f.href = href; if (href.startsWith('http')) { f.target = '_blank'; f.rel = 'noopener'; }
