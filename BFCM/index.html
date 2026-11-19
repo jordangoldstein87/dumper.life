@@ -81,7 +81,7 @@ if (pick) {
   f.innerHTML = `<img src="/img/tee-${pick.id}.jpg" alt="${pick.name}"><div><span class="eb">${PICKS[pick.id] || 'FEATURED TEE'}</span><h2>${pick.name.toUpperCase()}</h2><div class="p"><s>$1,000</s>$40 with code</div><span class="buy">Shop this tee →</span><div class="c">Code <b>${D.shop.code}</b> at checkout</div></div>`;
   f.hidden = false;
 }
-document.getElementById('tees').innerHTML = D.merch.filter(m => m !== pick).map(m => {
+document.getElementById('tees').innerHTML = D.merch.map(m => {
   const href = m.url || D.shop.home || '/#merch';
   return `<a class="tee" href="${href}" ${href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}><img src="/img/tee-${m.id}.jpg" alt="${m.name}" loading="lazy"><div><b>${m.name}</b><div class="p"><s>$1,000</s>$40 with code</div><span class="go">Shop →</span></div></a>`;
 }).join('');
