@@ -42,6 +42,8 @@ a{color:inherit}
 .stream a{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:#140c07;border:1px solid #8a5a22;text-decoration:none;font-weight:800}
 .stream a:hover{border-color:var(--gold)}
 .stream svg{width:24px;height:24px}
+.stream .ig{margin:12px 0 0;font-size:14px;opacity:.85}
+.stream .ig b{color:var(--gold)}
 .feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;max-width:820px;margin:28px auto 0;padding:16px;border-radius:20px;text-align:left;text-decoration:none;background:linear-gradient(180deg,#2a1408,#160b05);border:2px solid var(--gold);box-shadow:0 0 0 1px #f6b93b33,0 18px 60px #ff6a1a33}
 .feat img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
 .feat .eb{display:inline-block;font:400 14px Anton,Impact,sans-serif;letter-spacing:.2em;color:#1a0f05;background:linear-gradient(180deg,var(--gold2),var(--gold));padding:4px 10px;border-radius:6px}
@@ -65,11 +67,11 @@ footer a{color:var(--gold)}
   <div class="code"><span>DUMPER96</span><button id="copy">Copy code</button></div>
   <div class="sub">Enter the code at checkout · every tee, every size · while the sale runs</div>
   <a class="feat" id="feat" hidden></a>
-  <div class="stream" id="stream" hidden><h3>STREAMING NOW</h3><div class="svc" id="svc"></div></div>
+  <div class="stream" id="stream" hidden><h3>STREAMING NOW</h3><div class="svc" id="svc"></div><p class="ig">Now on <b>Instagram &amp; TikTok</b>: search “Dump Patrol” to add it to your posts and stories.</p></div>
 </header>
 <main class="wrap"><div class="grid" id="tees"></div></main>
 <footer>Dump Patrol — The Mixtape · <a href="/">dumper.life</a></footer>
-<script src="/data.js?v=1795019094"></script>
+<script src="/data.js?v=1795220791"></script>
 <script>
 const D = window.DP;
 // ?tee=<id> (or <html data-tee>) puts that tee up front as a featured pick (e.g. /BFCM/trae/ → came-in-late)
@@ -88,6 +90,7 @@ document.getElementById('tees').innerHTML = D.merch.map(m => {
 const ICON = {
   spotify:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M6.5 9.3c3.8-1.1 8-.8 11.2 1M7 12.4c3.1-.9 6.6-.6 9.3.9M7.6 15.3c2.5-.6 5-.4 7.2.8" stroke="#000" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
   apple:'<svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#FA2D48"/><path d="M15.5 5.5v8.7a2.2 2.2 0 1 1-1.4-2V8.1l-4.6 1v6.6a2.2 2.2 0 1 1-1.4-2V6.9z" fill="#fff"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF0000"/><circle cx="12" cy="12" r="6.5" fill="none" stroke="#fff" stroke-width="1.3"/><path d="M10.3 9.3v5.4l4.4-2.7z" fill="#fff"/></svg>',
 };
 const svc = D.LINKS.top.filter(s => ICON[s.id] && s.url);
 if (svc.length) {

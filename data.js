@@ -10,11 +10,11 @@ window.DP = {
   ],
   // url: null until CD Baby's delivery shows up on that service; the tracker fills these in.
   LINKS: {
-    updated: "Nov 18",
+    updated: "Nov 20",
     top: [
       { id: "spotify", name: "Spotify",       url: "https://open.spotify.com/album/1MbVuKO2ZLIZJEwAwn8WnH" },
       { id: "apple",   name: "Apple Music",   url: "https://music.apple.com/us/album/the-mixtape-ep/6835745509" },
-      { id: "youtube", name: "YouTube Music", url: null },
+      { id: "youtube", name: "YouTube", url: "https://www.youtube.com/watch?v=McCyzLlyjUU&list=OLAK5uy_lAMcWaENEACmq8fiU3eZaJttpBScaHyoM" },
       { id: "amazon",  name: "Amazon Music",  url: null },
     ],
     more: [
@@ -23,8 +23,8 @@ window.DP = {
       { id: "pandora",  name: "Pandora",       url: null },
       { id: "itunes",   name: "iTunes Store",  url: "https://itunes.apple.com/us/album/the-mixtape-ep/6835745509" },
       { id: "iheart",   name: "iHeartRadio",   url: null },
-      { id: "tiktok",   name: "TikTok",        url: null },
-      { id: "instagram",name: "Instagram / Facebook", url: null },
+      { id: "tiktok",   name: "TikTok",        url: null, inApp: true },
+      { id: "instagram",name: "Instagram / Facebook", url: null, inApp: true },
       { id: "shazam",   name: "Shazam",        url: null },
       { id: "napster",  name: "Napster",       url: null },
       { id: "anghami",  name: "Anghami",       url: null },

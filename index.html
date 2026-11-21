@@ -48,6 +48,9 @@ summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--mute)}
 .more{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .more a,.more span{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
 .more span{opacity:.45}
+.more span.in{opacity:1;border-color:var(--gold)}
+.inapp{margin:14px 0 0;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-size:14px}
+.inapp b{color:var(--gold)}
 .more a:hover{border-color:var(--gold);color:var(--gold)}
 .tracks{list-style:none;padding:0;display:grid;gap:8px}
 .tracks li{display:flex;align-items:center;gap:14px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;cursor:pointer}
@@ -137,6 +140,7 @@ footer{padding:40px 0 120px;color:var(--mute);font-size:13px;text-align:center;b
   <section id="stream">
     <h2>Stream it <span class="soonpill" id="soonpill">Coming soon to streaming</span></h2>
     <div class="svc" id="top"></div>
+    <p class="inapp" id="inapp" hidden><b>Now on Instagram &amp; TikTok.</b> Add any track to your posts, Reels and stories: tap the music button and search “Dump Patrol”.</p>
     <details><summary>Everywhere else it's available</summary><div class="more" id="more"></div></details>
   </section>
 
@@ -177,7 +181,7 @@ footer{padding:40px 0 120px;color:var(--mute);font-size:13px;text-align:center;b
 </div>
 <footer>© 2026 Dump Patrol · dumper.life</footer>
 
-<script src="data.js?v=1795019094"></script>
+<script src="data.js?v=1795220791"></script>
 <script>
 const D = window.DP, $ = id => document.getElementById(id);
 const ICON = {
@@ -191,10 +195,12 @@ if (L.top.concat(L.more).some(s => s.url)) $('soonpill').style.display = 'none';
 $('top').innerHTML = L.top.map(s => s.url
   ? `<a href="${s.url}" target="_blank" rel="noopener">${ICON[s.id]}${s.name}</a>`
   : `<span class="soon">${ICON[s.id]}${s.name}<em>coming soon</em></span>`).join('');
-const live = L.more.filter(s => s.url), soon = L.more.filter(s => !s.url);
+const live = L.more.filter(s => s.url), inapp = L.more.filter(s => !s.url && s.inApp), soon = L.more.filter(s => !s.url && !s.inApp);
 $('more').innerHTML = live.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join('')
+  + inapp.map(s => `<span class="in">${s.name} · in the app</span>`).join('')
   + soon.map(s => `<span>${s.name}</span>`).join('');
-document.querySelector('summary').textContent = `Everywhere else it's available (${live.length} live${soon.length ? ', ' + soon.length + ' coming' : ''})`;
+if (inapp.length) $('inapp').hidden = false;
+document.querySelector('summary').textContent = `Everywhere else it's available (${live.length + inapp.length} live${soon.length ? ', ' + soon.length + ' coming' : ''})`;
 
 // tracklist player
 const pl = $('player');
